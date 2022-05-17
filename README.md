@@ -17,3 +17,4 @@ This is a chrome extension which copies the html code of the selected text to cl
   1. Click on the extension icon, it will display a toast message once it start running.
   2. Click on the text you want to parse, a red background colour will be added to the selected text with a toast message.
   3. The text would be copied to your clipboard by now.
+  Note: All navigation through anchor tags will be disabled when the extension is running, to close the extension, just reload the page.
