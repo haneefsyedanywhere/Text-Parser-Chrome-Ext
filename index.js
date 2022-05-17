@@ -113,5 +113,3 @@ function runScript() {
 
 runScript();
 
-
-console.log("Test to check if direct push master is disabled!");
