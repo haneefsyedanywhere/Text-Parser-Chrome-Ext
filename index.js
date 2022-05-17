@@ -1,4 +1,4 @@
-const createElement =(tag, props, child) =>{
+const newElement = (tag, props, child) =>{
   let element = document.createElement(tag);
   element.className = props.class;
   for (const property in props.styles){
@@ -25,7 +25,7 @@ const snackBarStyles = {
 };
 
 const onSuccessNotificationAndEvents = ()=>{
-  let snackBar = createElement(
+  let snackBar = newElement(
     "div",
     { class: "snackbar", styles: snackBarStyles },
     "Parsed text copied to clipboard 😎"
@@ -38,7 +38,7 @@ const onSuccessNotificationAndEvents = ()=>{
 }
 
 const onErrorNotificationAndEvents = ()=>{
-  let snackBar = createElement(
+  let snackBar = newElement(
     "div",
     { class: "snackbar", styles: snackBarStyles },
     "Error Parsing Text 😔"
@@ -85,7 +85,7 @@ const selectionEventHandler = (e)=>{
 
 const notifyPluginLoaded = ()=>{
   console.log("Running Text Parser Script!");
-  let snackBar = createElement(
+  let snackBar = newElement(
     "div",
     { class: "snackbar", styles: snackBarStyles },
     "Text Parser Running! &#127881;"
