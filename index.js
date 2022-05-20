@@ -125,6 +125,17 @@ const getImageDpi = (link) => {
   }
 };
 
+const svgEventHandler = (e)=>{
+  const svgElement = e.target.parentElement.innerHTML.toString();
+  const parsedSvgElement = parseDoubleQuotesToSingleQuote(svgElement);
+  copyTextToClipboard(parsedSvgElement);
+};
+
+const querySvgImagesAndAddListener = () => {
+  document.querySelectorAll("svg").forEach((element) => {
+    element.addEventListener("click", svgEventHandler);
+  });
+}
 
 const imageEventHandler = (e)=>{
   const src = removeImageTypeFromURL(e.target.src);
@@ -146,7 +157,7 @@ const imageEventHandler = (e)=>{
   copyTextToClipboard(textToCopy);
 }
 
-const queryImagesAndListener = () => {
+const queryImagesAndAddListener = () => {
   document.querySelectorAll("img").forEach((element) => {
     element.addEventListener("click", imageEventHandler);
   });
@@ -169,7 +180,8 @@ function runScript() {
   notifyPluginLoaded();
   document.addEventListener("selectionchange", selectionEventHandler);
   disableAnchorNavigation();
-  queryImagesAndListener();
+  queryImagesAndAddListener();
+  querySvgImagesAndAddListener();
 }
 
 runScript();
