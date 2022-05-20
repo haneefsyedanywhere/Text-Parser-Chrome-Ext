@@ -1,5 +1,10 @@
 # Text-Parser-Chrome-Ext
-This is a chrome extension which copies the html code of the selected text to clipboard.
+This is a chrome extension which copies the selected text to clipboard.
+It contains the following features:
+ 1. On clicking/selecting a text, the content is copied, if any anchor tag is present in the copied line, those will be copied to your clipboard 
+     after the double quotes are converted to single quotes.
+ 2. On clicking any image, the corresponding details of the image such as src, alt, and prefixes in the mobile image url are copied.
+ 3. On clicking svg image, the svg code will be copied with double quotes converted to single quotes.
 
 
 # Steps to follow to add the extension to your chrome
