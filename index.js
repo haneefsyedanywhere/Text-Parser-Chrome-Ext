@@ -126,7 +126,7 @@ const getImageDpi = (link) => {
 };
 
 const svgEventHandler = (e)=>{
-  const svgElement = e.target.parentElement.innerHTML.toString();
+  const svgElement = e.currentTarget.outerHTML.toString();
   const parsedSvgElement = parseDoubleQuotesToSingleQuote(svgElement);
   copyTextToClipboard(parsedSvgElement);
 };
