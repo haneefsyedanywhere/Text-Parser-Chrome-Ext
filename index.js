@@ -54,12 +54,17 @@ const onErrorNotificationAndEvents = () => {
   }, 1000);
 };
 
+const trimString = (text)=>{
+  return text.trim();
+}
+
 const copyTextToClipboard = (text) => {
+  const trimmedText = trimString(text);
   if (!navigator.clipboard) {
-    fallbackCopyTextToClipboard(text);
+    fallbackCopyTextToClipboard(trimmedText);
     return;
   }
-  navigator.clipboard.writeText(text).then(
+  navigator.clipboard.writeText(trimmedText).then(
     function () {
       onSuccessNotificationAndEvents();
       // console.log("Async: Copying to clipboard was successful!");
@@ -70,6 +75,7 @@ const copyTextToClipboard = (text) => {
     }
   );
 };
+
 
 const parseDoubleQuotesToSingleQuote = (text) => {
   return text.replace(/"/g, "'");
