@@ -1,4 +1,8 @@
 # Text-Parser-Chrome-Ext
+
+## Hosting
+This project is hosted on https://haneefmhmmd.github.io/lab-report/
+
 This is a chrome extension which copies the selected text to clipboard.
 It contains the following features:
  1. On clicking/selecting a text, the content is copied, if any anchor tag is present in the copied line, those will be copied to your clipboard 
